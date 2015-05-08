@@ -1,0 +1,40 @@
+﻿@model SalaoNaWeb.Models.Agenda
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h3> Cadastro de Agendas</h3>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataEHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataEHora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valorServ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valorServ)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.ageCod }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

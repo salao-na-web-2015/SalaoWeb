@@ -1,0 +1,52 @@
+﻿@model IEnumerable<SalaoNaWeb.Models.Funcionario>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Cadastro de Funcionarios</h3>
+<hr />
+
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpfCnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.salario)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeFunc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpfCnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.salario)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.funcCod }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.funcCod }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.funcCod })
+        </td>
+    </tr>
+}
+
+</table>

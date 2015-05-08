@@ -1,0 +1,61 @@
+﻿@model SalaoNaWeb.Models.Empresa
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+    <h3>Cadastro de Empresas</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.razSoc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.razSoc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nomFant)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomFant)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cidadeNome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cidadeNome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cidadeUf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cidadeUf)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

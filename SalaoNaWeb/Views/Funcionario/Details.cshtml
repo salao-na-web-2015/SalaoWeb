@@ -1,0 +1,48 @@
+﻿@model SalaoNaWeb.Models.Funcionario
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h3>Cadastro de Funcionarios</h3>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpfCnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpfCnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salario)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.funcCod }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

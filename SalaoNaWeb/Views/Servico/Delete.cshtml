@@ -1,0 +1,37 @@
+﻿@model SalaoNaWeb.Models.Servico
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+    <h3>Cadastro de Servicos</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeServ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeServ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

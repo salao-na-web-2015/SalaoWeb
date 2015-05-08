@@ -1,0 +1,39 @@
+﻿@model IEnumerable<SalaoNaWeb.Models.Cidade>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Cadastro de Cidades</h3>
+<hr />
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cidNom)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cidUf)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cidNom)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cidUf)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.cidCod }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.cidCod }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.cidCod })
+        </td>
+    </tr>
+}
+
+</table>

@@ -1,0 +1,53 @@
+﻿@model SalaoNaWeb.Models.Funcionario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<div>
+    <h3>Cadastro de Fuuncionarios</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpfCnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpfCnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.salario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.salario)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>

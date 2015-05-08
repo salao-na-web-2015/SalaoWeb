@@ -1,0 +1,48 @@
+﻿@model SalaoNaWeb.Models.Cliente
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h3>Cadastro de Clientes</h3>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeCli)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeCli)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cpfCnpj)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cpfCnpj)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.contato)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.contato)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.cliCod }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

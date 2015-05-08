@@ -1,0 +1,45 @@
+﻿@model IEnumerable<SalaoNaWeb.Models.Agenda>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Cadastro de Agendas</h3>
+<hr />
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataEHora)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.valorServ)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeFunc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dataEHora)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.valorServ)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.ageCod }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.ageCod }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.ageCod })
+        </td>
+    </tr>
+}
+
+</table>

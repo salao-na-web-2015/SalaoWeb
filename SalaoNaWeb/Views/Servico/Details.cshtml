@@ -1,0 +1,32 @@
+﻿@model SalaoNaWeb.Models.Servico
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h3>Cadastro de Servicos</h3>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeServ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeServ)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valor)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.servCod }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

@@ -1,0 +1,51 @@
+﻿@model IEnumerable<SalaoNaWeb.Models.Cliente>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Cadastro de Clientes</h3>
+<hr />
+<p>
+    @Html.ActionLink("Cadastrar", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCli)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cpfCnpj)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.contato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeCli)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cpfCnpj)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.contato)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "Edit", new { id=item.cliCod }) |
+            @Html.ActionLink("Detalhes", "Details", new { id=item.cliCod }) |
+            @Html.ActionLink("Deletar", "Delete", new { id=item.cliCod })
+        </td>
+    </tr>
+}
+
+</table>

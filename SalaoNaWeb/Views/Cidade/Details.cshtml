@@ -1,0 +1,32 @@
+﻿@model SalaoNaWeb.Models.Cidade
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<div>
+    <h3>Cadastro de Cidades</h3>
+	<hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cidNom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cidNom)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cidUf)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cidUf)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Alterar", "Edit", new { id = Model.cidCod }) |
+    @Html.ActionLink("Voltar", "Index")
+</p>

@@ -1,0 +1,46 @@
+﻿@model SalaoNaWeb.Models.Agenda
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+
+<div>
+    <h3> Cadastro de Agendas</h3>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.nomeFunc)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nomeFunc)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataEHora)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataEHora)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.valorServ)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.valorServ)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    }
+</div>
