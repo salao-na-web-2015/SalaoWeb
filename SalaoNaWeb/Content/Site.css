@@ -53,3 +53,19 @@ input[type="checkbox"].input-validation-error {
         padding: 10px 15px;
     }
 }
+/*a.classname
+{
+    background: url(Imagens/logo3.png) no-repeat top left;
+     display: block;
+     width: 350px;
+     height: 150px;
+     left:20px;
+    /* text-indent: -9999px; /* hides the link text */
+}*/
+
+content.body-content > img
+{
+    width: 60px;
+    height: 60px;
+    background: url(Imagens/facebook.png) no-repeat left;
+}
