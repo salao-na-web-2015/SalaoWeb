@@ -18,7 +18,8 @@ namespace SalaoNaWeb.Controllers
         // GET: /Agenda/
         public ActionResult Index()
         {
-            return View(db.Agendas.ToList());
+            var agendas = db.Agendas.Include(a => a.Empresa).Include(a => a.Funcionario).Include(a => a.Servico);
+            return View(agendas.ToList());
         }
 
         // GET: /Agenda/Details/5
@@ -39,6 +40,9 @@ namespace SalaoNaWeb.Controllers
         // GET: /Agenda/Create
         public ActionResult Create()
         {
+            ViewBag.empId = new SelectList(db.Empresas, "empId", "razSoc");
+            ViewBag.funcId = new SelectList(db.Funcionarios, "funcId", "nomeFunc");
+            ViewBag.servId = new SelectList(db.Servicos, "servId", "nomeServ");
             return View();
         }
 
@@ -47,7 +51,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ageCod,nomeFunc,dataEHora,valorServ")] Agenda agenda)
+        public ActionResult Create([Bind(Include="ageId,empId,servId,valorServ,funcId,dataHora")] Agenda agenda)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +60,9 @@ namespace SalaoNaWeb.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.empId = new SelectList(db.Empresas, "empId", "razSoc", agenda.empId);
+            ViewBag.funcId = new SelectList(db.Funcionarios, "funcId", "nomeFunc", agenda.funcId);
+            ViewBag.servId = new SelectList(db.Servicos, "servId", "nomeServ", agenda.servId);
             return View(agenda);
         }
 
@@ -71,6 +78,9 @@ namespace SalaoNaWeb.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.empId = new SelectList(db.Empresas, "empId", "razSoc", agenda.empId);
+            ViewBag.funcId = new SelectList(db.Funcionarios, "funcId", "nomeFunc", agenda.funcId);
+            ViewBag.servId = new SelectList(db.Servicos, "servId", "nomeServ", agenda.servId);
             return View(agenda);
         }
 
@@ -79,7 +89,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ageCod,nomeFunc,dataEHora,valorServ")] Agenda agenda)
+        public ActionResult Edit([Bind(Include="ageId,empId,servId,valorServ,funcId,dataHora")] Agenda agenda)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +97,9 @@ namespace SalaoNaWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.empId = new SelectList(db.Empresas, "empId", "razSoc", agenda.empId);
+            ViewBag.funcId = new SelectList(db.Funcionarios, "funcId", "nomeFunc", agenda.funcId);
+            ViewBag.servId = new SelectList(db.Servicos, "servId", "nomeServ", agenda.servId);
             return View(agenda);
         }
 

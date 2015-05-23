@@ -47,7 +47,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="cidCod,cidNom,cidUf")] Cidade cidade)
+        public ActionResult Create([Bind(Include="cidID,cidNom,cidUf")] Cidade cidade)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="cidCod,cidNom,cidUf")] Cidade cidade)
+        public ActionResult Edit([Bind(Include="cidID,cidNom,cidUf")] Cidade cidade)
         {
             if (ModelState.IsValid)
             {

@@ -4,10 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h3>Cadastro de Clientes</h3>
-<hr />
+<h2>Index</h2>
+
 <p>
-    @Html.ActionLink("Cadastrar", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -15,7 +15,7 @@
             @Html.DisplayNameFor(model => model.nomeCli)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cpfCnpj)
+            @Html.DisplayNameFor(model => model.cpf)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.email)
@@ -32,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.nomeCli)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.cpfCnpj)
+            @Html.DisplayFor(modelItem => item.cpf)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.email)
@@ -41,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.contato)
         </td>
         <td>
-            @Html.ActionLink("Alterar", "Edit", new { id=item.cliCod }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.cliCod }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.cliCod })
+            @Html.ActionLink("Edit", "Edit", new { id=item.cliId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.cliId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.cliId })
         </td>
     </tr>
 }

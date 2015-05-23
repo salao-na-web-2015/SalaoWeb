@@ -10,14 +10,15 @@ namespace SalaoNaWeb.Models
     public class Servico
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int servCod { get; set; }
+        public int servId { get; set; }
 
         [Display(Name = "Descrição")]
         public String nomeServ { get; set; }
 
         [Display(Name = "Valor")]
         public Double valor { get; set; }
+
+        public virtual ICollection<Agenda> Agenda { get; set; }
 
 
     }

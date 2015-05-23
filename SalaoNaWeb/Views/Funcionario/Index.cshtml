@@ -4,11 +4,10 @@
     ViewBag.Title = "Index";
 }
 
-<h3>Cadastro de Funcionarios</h3>
-<hr />
+<h2>Index</h2>
 
 <p>
-    @Html.ActionLink("Cadastrar", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
@@ -16,7 +15,7 @@
             @Html.DisplayNameFor(model => model.nomeFunc)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.cpfCnpj)
+            @Html.DisplayNameFor(model => model.cnpj)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.email)
@@ -33,7 +32,7 @@
             @Html.DisplayFor(modelItem => item.nomeFunc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.cpfCnpj)
+            @Html.DisplayFor(modelItem => item.cnpj)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.email)
@@ -42,9 +41,9 @@
             @Html.DisplayFor(modelItem => item.salario)
         </td>
         <td>
-            @Html.ActionLink("Alterar", "Edit", new { id=item.funcCod }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.funcCod }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.funcCod })
+            @Html.ActionLink("Edit", "Edit", new { id=item.funcId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.funcId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.funcId })
         </td>
     </tr>
 }

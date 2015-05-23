@@ -4,10 +4,20 @@
     ViewBag.Title = "Details";
 }
 
+<h2>Details</h2>
+
 <div>
-    <h3>Cadastro de Empresas</h3>
+    <h4>Empresa</h4>
 	<hr />
     <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Cidade.cidNom)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cidade.cidNom)
+        </dd>
+
         <dt>
             @Html.DisplayNameFor(model => model.razSoc)
         </dt>
@@ -32,25 +42,9 @@
             @Html.DisplayFor(model => model.cnpj)
         </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.cidadeNome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cidadeNome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.cidadeUf)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.cidadeUf)
-        </dd>
-
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Alterar", "Edit", new { id = Model.empCod }) |
-    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.empId }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

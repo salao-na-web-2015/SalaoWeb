@@ -4,13 +4,16 @@
     ViewBag.Title = "Index";
 }
 
-<h3>Cadastro de Empresas</h3>
-<hr />
+<h2>Index</h2>
+
 <p>
-    @Html.ActionLink("Cadastrar", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cidade.cidNom)
+        </th>
         <th>
             @Html.DisplayNameFor(model => model.razSoc)
         </th>
@@ -20,17 +23,14 @@
         <th>
             @Html.DisplayNameFor(model => model.cnpj)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cidadeNome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.cidadeUf)
-        </th>
         <th></th>
     </tr>
 
 @foreach (var item in Model) {
     <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Cidade.cidNom)
+        </td>
         <td>
             @Html.DisplayFor(modelItem => item.razSoc)
         </td>
@@ -41,15 +41,9 @@
             @Html.DisplayFor(modelItem => item.cnpj)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.cidadeNome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.cidadeUf)
-        </td>
-        <td>
-            @Html.ActionLink("Alterar", "Edit", new { id=item.empCod }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.empCod }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.empCod })
+            @Html.ActionLink("Edit", "Edit", new { id=item.empId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.empId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.empId })
         </td>
     </tr>
 }

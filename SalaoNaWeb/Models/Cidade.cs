@@ -10,17 +10,12 @@ namespace SalaoNaWeb.Models
     public class Cidade
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int cidCod { get; set; }
-
-        [Display(Name="Cidade")]
-        public String cidNom { get; set; }
-
-        [Display(Name = "Estado")]
-        public String cidUf { get; set; }
-
-     
-
-        //public virtual ICollection<Empresa> empresa { get; set; }
+        public int cidId {get; set;}
+        [Display(Name = "Cidade")]
+        public string cidNom { get; set; }
+        [Display(Name = "UF")]
+        public string cidUf { get; set; }
+        public virtual ICollection<Empresa> Empresa { get; set; }
+        
     }
 }

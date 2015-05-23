@@ -4,8 +4,10 @@
     ViewBag.Title = "Details";
 }
 
+<h2>Details</h2>
+
 <div>
-    <h3>Cadastro de Funcionarios</h3>
+    <h4>Funcionario</h4>
 	<hr />
     <dl class="dl-horizontal">
         <dt>
@@ -17,11 +19,11 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.cpfCnpj)
+            @Html.DisplayNameFor(model => model.cnpj)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.cpfCnpj)
+            @Html.DisplayFor(model => model.cnpj)
         </dd>
 
         <dt>
@@ -43,6 +45,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Alterar", "Edit", new { id = Model.funcCod }) |
-    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Edit", "Edit", new { id = Model.funcId }) |
+    @Html.ActionLink("Back to List", "Index")
 </p>

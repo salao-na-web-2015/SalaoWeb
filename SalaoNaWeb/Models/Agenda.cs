@@ -10,16 +10,36 @@ namespace SalaoNaWeb.Models
     public class Agenda
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ageCod { get; set; }
+        public int ageId { get; set; }
 
-        [Display(Name = "Funcionario")]
-        public String nomeFunc { get; set; }
+        [Display(Name = "Salão")]
+        [Required(ErrorMessage = "Favor informar um salão.")]
+        public int empId { get; set; }
+        
+        public virtual Empresa Empresa { get; set; }
 
-        [Display(Name = "Data")]
-        public DateTime dataEHora { get; set; }
+        [Display(Name = "Serviço")]
+        [Required(ErrorMessage = "Favor informar um tipo de serviço.")]
+        public int servId { get; set; }
+
+        public virtual Servico Servico { get; set; }
 
         [Display(Name = "Valor")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:0.00")]
         public Double valorServ { get; set; }
+
+        [Display(Name = "Funcionário")]
+        [Required(ErrorMessage = "Favor informar um profissional.")]
+        public int funcId { get; set; }
+
+        public virtual Funcionario Funcionario { get; set; }
+
+        [Display(Name = "Horário Agendado")]
+        //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime dataHora { get; set; }
+
+        
+
+        
     }
 }

@@ -215,6 +215,14 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201505230111193_MigrationSalaoWeb.cs" />
+    <Compile Include="Migrations\201505230111193_MigrationSalaoWeb.Designer.cs">
+      <DependentUpon>201505230111193_MigrationSalaoWeb.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201505231710179_MigrationSalaoWeb1.cs" />
+    <Compile Include="Migrations\201505231710179_MigrationSalaoWeb1.Designer.cs">
+      <DependentUpon>201505231710179_MigrationSalaoWeb1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountBindingModels.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -251,7 +259,6 @@
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\HelpPageApiModel.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\DisplayTemplates\ApiGroup.cshtml" />
     <Content Include="Areas\HelpPage\Views\Help\Api.cshtml" />
-    <None Include="Properties\PublishProfiles\Projeto SalãoWEB.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -305,6 +312,11 @@
     <Content Include="Views\Empresa\Details.cshtml" />
     <Content Include="Views\Empresa\Edit.cshtml" />
     <Content Include="Views\Empresa\Index.cshtml" />
+    <Content Include="Views\Cliente\Create.cshtml" />
+    <Content Include="Views\Cliente\Delete.cshtml" />
+    <Content Include="Views\Cliente\Details.cshtml" />
+    <Content Include="Views\Cliente\Edit.cshtml" />
+    <Content Include="Views\Cliente\Index.cshtml" />
     <Content Include="Views\Funcionario\Create.cshtml" />
     <Content Include="Views\Funcionario\Delete.cshtml" />
     <Content Include="Views\Funcionario\Details.cshtml" />
@@ -320,11 +332,6 @@
     <Content Include="Views\Agenda\Details.cshtml" />
     <Content Include="Views\Agenda\Edit.cshtml" />
     <Content Include="Views\Agenda\Index.cshtml" />
-    <Content Include="Views\Cliente\Create.cshtml" />
-    <Content Include="Views\Cliente\Delete.cshtml" />
-    <Content Include="Views\Cliente\Details.cshtml" />
-    <Content Include="Views\Cliente\Edit.cshtml" />
-    <Content Include="Views\Cliente\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -335,6 +342,14 @@
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201505230111193_MigrationSalaoWeb.resx">
+      <DependentUpon>201505230111193_MigrationSalaoWeb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201505231710179_MigrationSalaoWeb1.resx">
+      <DependentUpon>201505231710179_MigrationSalaoWeb1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

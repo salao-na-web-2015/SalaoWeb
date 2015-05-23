@@ -47,7 +47,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="cliCod,nomeCli,cpfCnpj,email,contato")] Cliente cliente)
+        public ActionResult Create([Bind(Include="cliId,nomeCli,cpf,email,contato")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="cliCod,nomeCli,cpfCnpj,email,contato")] Cliente cliente)
+        public ActionResult Edit([Bind(Include="cliId,nomeCli,cpf,email,contato")] Cliente cliente)
         {
             if (ModelState.IsValid)
             {

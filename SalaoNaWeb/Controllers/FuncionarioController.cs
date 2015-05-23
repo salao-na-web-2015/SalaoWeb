@@ -47,7 +47,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="funcCod,nomeFunc,cpfCnpj,email,salario")] Funcionario funcionario)
+        public ActionResult Create([Bind(Include="funcId,nomeFunc,cnpj,email,salario")] Funcionario funcionario)
         {
             if (ModelState.IsValid)
             {
@@ -79,7 +79,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="funcCod,nomeFunc,cpfCnpj,email,salario")] Funcionario funcionario)
+        public ActionResult Edit([Bind(Include="funcId,nomeFunc,cnpj,email,salario")] Funcionario funcionario)
         {
             if (ModelState.IsValid)
             {

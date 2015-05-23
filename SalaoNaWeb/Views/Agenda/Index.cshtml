@@ -4,21 +4,27 @@
     ViewBag.Title = "Index";
 }
 
-<h3>Cadastro de Agendas</h3>
-<hr />
+<h2>Index</h2>
+
 <p>
-    @Html.ActionLink("Cadastrar", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.nomeFunc)
+            @Html.DisplayNameFor(model => model.Empresa.razSoc)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dataEHora)
+            @Html.DisplayNameFor(model => model.Funcionario.nomeFunc)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Servico.nomeServ)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.valorServ)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataHora)
         </th>
         <th></th>
     </tr>
@@ -26,18 +32,24 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.nomeFunc)
+            @Html.DisplayFor(modelItem => item.Empresa.razSoc)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.dataEHora)
+            @Html.DisplayFor(modelItem => item.Funcionario.nomeFunc)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Servico.nomeServ)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.valorServ)
         </td>
         <td>
-            @Html.ActionLink("Alterar", "Edit", new { id=item.ageCod }) |
-            @Html.ActionLink("Detalhes", "Details", new { id=item.ageCod }) |
-            @Html.ActionLink("Deletar", "Delete", new { id=item.ageCod })
+            @Html.DisplayFor(modelItem => item.dataHora)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.ageId }) |
+            @Html.ActionLink("Details", "Details", new { id=item.ageId }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.ageId })
         </td>
     </tr>
 }

@@ -4,29 +4,31 @@
     ViewBag.Title = "Create";
 }
 
+<h2>Create</h2>
+
 
 @using (Html.BeginForm()) 
 {
     @Html.AntiForgeryToken()
     
     <div class="form-horizontal">
-        <h3>Cadastro de Agenda</h3>
+        <h4>Agenda</h4>
         <hr />
         @Html.ValidationSummary(true)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.nomeFunc, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.empId, "Salão", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.nomeFunc)
-                @Html.ValidationMessageFor(model => model.nomeFunc)
+                @Html.DropDownList("empId", "Selecione um salão")
+                @Html.ValidationMessageFor(model => model.empId)
             </div>
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.dataEHora, new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.servId, "Tipo de Serviço", new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.dataEHora)
-                @Html.ValidationMessageFor(model => model.dataEHora)
+                @Html.DropDownList("servId", "Selecione um serviço.")
+                @Html.ValidationMessageFor(model => model.servId)
             </div>
         </div>
 
@@ -39,15 +41,31 @@
         </div>
 
         <div class="form-group">
+            @Html.LabelFor(model => model.funcId, "Profissional", new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("funcId", "Selecione um profissional")
+                @Html.ValidationMessageFor(model => model.funcId)
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.dataHora, new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.dataHora)
+                @Html.ValidationMessageFor(model => model.dataHora)
+            </div>
+        </div>
+
+        <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Cadastrar" class="btn btn-default" />
+                <input type="submit" value="Create" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Voltar", "Index")
+    @Html.ActionLink("Back to List", "Index")
 </div>
 
 @section Scripts {

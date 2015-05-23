@@ -10,8 +10,7 @@ namespace SalaoNaWeb.Models
     public class Empresa
     {
         [Key]
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int empCod { get; set; }
+        public int empId { get; set; }
 
         [Display(Name = "Razão Social")]
         public String razSoc { get; set; }
@@ -22,13 +21,12 @@ namespace SalaoNaWeb.Models
         [Display(Name = "Cnpj")]
         public String cnpj { get; set; }
 
-        public Cidade cid { get; set; }
-
         [Display(Name = "Cidade")]
-        public String cidadeNome {get; set;}
+        public int cidId { get; set; }
 
-        [Display(Name = "Estado")]
-        public String cidadeUf { get; set; }
+        public virtual Cidade Cidade { get; set; }
+
+        public virtual ICollection<Agenda> Agenda { get; set; }
     }
 
 }

@@ -18,7 +18,8 @@ namespace SalaoNaWeb.Controllers
         // GET: /Empresa/
         public ActionResult Index()
         {
-            return View(db.Empresas.ToList());
+            var empresas = db.Empresas.Include(e => e.Cidade);
+            return View(empresas.ToList());
         }
 
         // GET: /Empresa/Details/5
@@ -39,6 +40,7 @@ namespace SalaoNaWeb.Controllers
         // GET: /Empresa/Create
         public ActionResult Create()
         {
+            ViewBag.cidId = new SelectList(db.Cidades, "cidId", "cidNom");
             return View();
         }
 
@@ -47,7 +49,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="empCod,razSoc,nomFant,cnpj,cidadeNome,cidadeUf")] Empresa empresa)
+        public ActionResult Create([Bind(Include="empId,razSoc,nomFant,cnpj,cidId")] Empresa empresa)
         {
             if (ModelState.IsValid)
             {
@@ -56,6 +58,7 @@ namespace SalaoNaWeb.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.cidId = new SelectList(db.Cidades, "cidId", "cidNom", empresa.cidId);
             return View(empresa);
         }
 
@@ -71,6 +74,7 @@ namespace SalaoNaWeb.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.cidId = new SelectList(db.Cidades, "cidId", "cidNom", empresa.cidId);
             return View(empresa);
         }
 
@@ -79,7 +83,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="empCod,razSoc,nomFant,cnpj,cidadeNome,cidadeUf")] Empresa empresa)
+        public ActionResult Edit([Bind(Include="empId,razSoc,nomFant,cnpj,cidId")] Empresa empresa)
         {
             if (ModelState.IsValid)
             {
@@ -87,6 +91,7 @@ namespace SalaoNaWeb.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.cidId = new SelectList(db.Cidades, "cidId", "cidNom", empresa.cidId);
             return View(empresa);
         }
 
