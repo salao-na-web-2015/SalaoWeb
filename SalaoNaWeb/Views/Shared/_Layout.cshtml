@@ -22,7 +22,6 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Início", "Index", "Home", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Cidades", "Index", "Cidade", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Empresas", "Index", "Empresa", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Clientes", "Index", "Cliente", new { area = "" }, null)</li>
@@ -30,6 +29,9 @@
                     <li>@Html.ActionLink("Servicos", "Index", "Servico", new { area = "" }, null)</li>
                     <li>@Html.ActionLink("Agenda", "Index", "Agenda", new { area = "" }, null)</li>
                 </ul>
+                @*<ul class="nav navbar-nav navbar-right" data-bind="with: user">
+                    <li data-bind="click: logOff">@Html.ActionLink("Fazer logoff", null, null, new { @class = "glyphicon glyphicon-off" })
+                </ul>*@
             </div>
         </div>
     </div>
@@ -37,7 +39,7 @@
         @RenderBody()
         <hr />
         <footer>
-            <p>&copy; @DateTime.Now.Year - Desenvolvido por Faculdade Una de BH. Todos direitos reservados.</p>
+            <p class="input-group">&copy; @DateTime.Now.Year - Desenvolvido por Faculdade Una de BH. Todos direitos reservados.</p>
         </footer>
     </div>
 

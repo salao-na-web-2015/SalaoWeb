@@ -4,11 +4,9 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<h2><span>@Html.ActionLink(" Incluir", "Create", null, new { @class = "btn btn-primary glyphicon glyphicon-pencil" })</span></h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -29,9 +27,9 @@
             @Html.DisplayFor(modelItem => item.valor)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.servId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.servId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.servId })
+            @Html.ActionLink(" Alterar", "Edit", new { id = item.servId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-edit" })
+            @Html.ActionLink(" Detalhes", "Details", new { id = item.servId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-list-alt" })
+            @Html.ActionLink(" Deletar", "Delete", new { id = item.servId }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-remove-sign" })
         </td>
     </tr>
 }

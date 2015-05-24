@@ -4,12 +4,8 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
-
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
+<h2><span>@Html.ActionLink(" Incluir", "Create", null, new { @class = "btn btn-primary glyphicon glyphicon-pencil" })</span></h2>
+<table class="table table-hover table-responsive">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Empresa.razSoc)
@@ -47,9 +43,9 @@
             @Html.DisplayFor(modelItem => item.dataHora)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ageId }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ageId }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ageId })
+            @Html.ActionLink(" Alterar", "Edit", new { id = item.ageId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-edit" }) 
+            @Html.ActionLink(" Detalhes", "Details", new { id = item.ageId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-list-alt" }) 
+            @Html.ActionLink(" Deletar", "Delete", new { id = item.ageId }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-remove-sign" })
         </td>
     </tr>
 }

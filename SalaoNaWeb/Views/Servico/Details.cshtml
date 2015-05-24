@@ -29,6 +29,6 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.servId }) |
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink(" Alterar", "Edit", new { id = Model.servId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-edit" })
+    @Html.ActionLink(" Voltar", "Index", null, new { @class = "btn btn-info btn-sm glyphicon glyphicon-backward" })
 </p>

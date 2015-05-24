@@ -29,7 +29,6 @@
                 </div>
                 <div data-bind="if: loggedIn" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="#" data-bind="click: navigateToHome">Início</a></li>
                         <li>@Html.ActionLink("Cidades", "Index", "Cidade", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("Empresas", "Index", "Empresa", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("Clientes", "Index", "Cliente", new { area = "" }, null)</li>
@@ -39,9 +38,9 @@
                     </ul>
                     <ul class="nav navbar-nav navbar-right" data-bind="with: user">
                         <li>
-                            <span class="navbar-text nofloat">Olá, <a href="#" class="navbar-link" data-bind="text: name, click: manage"></a>!</span>
+                            <span class="navbar-text nofloat">Bem vindo, <a href="#" class="navbar-link" data-bind="text: name, click: manage"></a>!</span>
                         </li>
-                        <li><a href="#" data-bind="click: logOff">Fazer logoff</a></li>
+                        <li data-bind="click: logOff">@Html.ActionLink(" Sair", null, null, new { @class = "glyphicon glyphicon-off" })
                     </ul>
                 </div>
             </div>
