@@ -37,5 +37,23 @@
 
         </form>
     </section>
+    <section class="col-md-4">
+        <h4>Use outro serviço para fazer login.</h4>
+        <hr />
+        <div data-bind="visible: loadingExternalLogin">Carregando...</div>
+        <div data-bind="visible: !loadingExternalLogin()">
+            <div data-bind="visible: !hasExternalLogin()">
+                <p>
+                    There are no external authentication services configured. See <a href="http://go.microsoft.com/fwlink/?LinkId=313242">this article</a>
+                    for details on setting up this ASP.NET application to support logging in via external services.
+                </p>
+            </div>
+            <form class="form-horizontal" role="form" data-bind="visible: hasExternalLogin">
+                <p data-bind="foreach: externalLoginProviders">
+                    <button type="submit" class="btn btn-primary" data-bind="text: name, attr: { title: 'Log in using your ' + name() + ' account' }, click: login"></button>
+                </p>
+            </form>
+        </div>
+    </section>
 </div>
 <!-- /ko -->
