@@ -59,7 +59,7 @@ namespace SalaoNaWeb
                 appId: "865396020197033",
                 appSecret: "3191c1e607a64dbd06a723d7f53ca23b");
 
-            app.UseGoogleAuthentication();
+            //app.UseGoogleAuthentication();
                 
         }
     }
