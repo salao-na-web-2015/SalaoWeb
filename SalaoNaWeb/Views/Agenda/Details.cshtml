@@ -4,11 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
     <h4>Agenda</h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.Empresa.razSoc)
@@ -43,11 +41,19 @@
         </dd>
 
         <dt>
-            @Html.DisplayNameFor(model => model.dataHora)
+            @Html.DisplayNameFor(model => model.dataHoraInicio)
         </dt>
 
         <dd>
-            @Html.DisplayFor(model => model.dataHora)
+            @Html.DisplayFor(model => model.dataHoraInicio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.dataHoraFim)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.dataHoraFim)
         </dd>
 
     </dl>

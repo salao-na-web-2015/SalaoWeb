@@ -38,6 +38,8 @@ namespace SalaoNaWeb.Migrations
 
         public System.Data.Entity.DbSet<SalaoNaWeb.Models.Agenda> Agendas { get; set; }
 
+        public System.Data.Entity.DbSet<SalaoNaWeb.Models.Calendario> Calendario { get; set; }
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();

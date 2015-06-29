@@ -51,7 +51,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include="ageId,empId,servId,valorServ,funcId,dataHora")] Agenda agenda)
+        public ActionResult Create([Bind(Include = "ageId,empId,servId,valorServ,funcId,dataHoraInicio, dataHoraFim")] Agenda agenda)
         {
             if (ModelState.IsValid)
             {
@@ -89,7 +89,7 @@ namespace SalaoNaWeb.Controllers
         // obter mais detalhes, consulte http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include="ageId,empId,servId,valorServ,funcId,dataHora")] Agenda agenda)
+        public ActionResult Edit([Bind(Include = "ageId,empId,servId,valorServ,funcId,dataHoraInicio, dataHoraFim")] Agenda agenda)
         {
             if (ModelState.IsValid)
             {

@@ -34,9 +34,12 @@ namespace SalaoNaWeb.Models
 
         public virtual Funcionario Funcionario { get; set; }
 
-        [Display(Name = "Horário Agendado")]
+        [Display(Name = "Horário Inicio Agendamento")]
         //[DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}")]
-        public DateTime dataHora { get; set; }
+        public DateTime dataHoraInicio { get; set; }
+
+        [Display(Name = "Horário Final Agendamento")]
+        public DateTime dataHoraFim { get; set; }
 
         
 

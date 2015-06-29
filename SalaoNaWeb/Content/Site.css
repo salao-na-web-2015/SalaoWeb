@@ -69,3 +69,13 @@ content.body-content > img
     height: 60px;
     background: url(Imagens/facebook.png) no-repeat left;
 }
+body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+ 
+.scheduler_container{
+    width:100%;
+    height:600px;
+    border:1px solid #aeaeae;
+}

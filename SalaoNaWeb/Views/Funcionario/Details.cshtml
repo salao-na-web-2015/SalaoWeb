@@ -4,11 +4,9 @@
     ViewBag.Title = "Details";
 }
 
-<h2>Details</h2>
-
 <div>
     <h4>Funcionario</h4>
-	<hr />
+    <hr />
     <dl class="dl-horizontal">
         <dt>
             @Html.DisplayNameFor(model => model.nomeFunc)
@@ -32,14 +30,6 @@
 
         <dd>
             @Html.DisplayFor(model => model.email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.salario)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.salario)
         </dd>
 
     </dl>

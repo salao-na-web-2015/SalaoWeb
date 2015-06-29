@@ -17,9 +17,6 @@
         <th>
             @Html.DisplayNameFor(model => model.email)
         </th>
-        <th>
-            @Html.DisplayNameFor(model => model.salario)
-        </th>
         <th></th>
     </tr>
 
@@ -34,9 +31,6 @@
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.email)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.salario)
             </td>
             <td>
                 @Html.ActionLink(" Alterar", "Edit", new { id = item.funcId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-edit" })

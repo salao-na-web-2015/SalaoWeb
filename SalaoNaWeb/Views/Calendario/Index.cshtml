@@ -1,0 +1,9 @@
+﻿@{
+    ViewBag.Title = "Horários Agendados";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Horários Agendados</h2>
+<div class="scheduler_container">
+    @Html.Raw(Model.Render())
+</div>

@@ -20,34 +20,41 @@
             @Html.DisplayNameFor(model => model.valorServ)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.dataHora)
+            @Html.DisplayNameFor(model => model.dataHoraInicio)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dataHoraFim)
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Empresa.razSoc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Funcionario.nomeFunc)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Servico.nomeServ)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.valorServ)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.dataHora)
-        </td>
-        <td>
-            @Html.ActionLink(" Alterar", "Edit", new { id = item.ageId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-edit" }) 
-            @Html.ActionLink(" Detalhes", "Details", new { id = item.ageId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-list-alt" }) 
-            @Html.ActionLink(" Deletar", "Delete", new { id = item.ageId }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-remove-sign" })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Empresa.razSoc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Funcionario.nomeFunc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Servico.nomeServ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valorServ)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataHoraInicio)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.dataHoraFim)
+            </td>
+            <td>
+                @Html.ActionLink(" Alterar", "Edit", new { id = item.ageId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-edit" })
+                @Html.ActionLink(" Detalhes", "Details", new { id = item.ageId }, new { @class = "btn btn-success btn-sm glyphicon glyphicon-list-alt" })
+                @Html.ActionLink(" Deletar", "Delete", new { id = item.ageId }, new { @class = "btn btn-danger btn-sm glyphicon glyphicon-remove-sign" })
+            </td>
+        </tr>
+    }
 
 </table>

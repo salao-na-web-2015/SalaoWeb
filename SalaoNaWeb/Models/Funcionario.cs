@@ -25,10 +25,6 @@ namespace SalaoNaWeb.Models
         [StringLength(100, MinimumLength = 5, ErrorMessage = "O Email deve ter no mínimo 5 e no máximo 100 caracteres.")]
         public String email { get; set; }
 
-        [Display(Name = "Salário")]
-        [Required(ErrorMessage = "Favor informar um salário.")]
-        public Double salario { get; set; }
-
         public virtual ICollection<Agenda> Agenda { get; set; }
 
     }

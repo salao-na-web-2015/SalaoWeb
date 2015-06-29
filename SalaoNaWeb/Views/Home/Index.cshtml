@@ -27,14 +27,21 @@
                     <p class="navbar-brand" data-bind="if: !loggedIn()">SalaoWeb</p>
                     <p class="navbar-brand" data-bind="if: loggedIn()">SalaoWeb</p>
                 </div>
+                @*<div  data-bind="if: !loggedIn()" class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav navbar-left">
+                        <li>@Html.ActionLink("Registrar", "_Register", "Home", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("Acessar", "_Login", "Home", new { area = "" }, null)</li>
+                    </ul>*@
+
                 <div data-bind="if: loggedIn" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li>@Html.ActionLink("Cidades", "Index", "Cidade", new { area = "" }, null)</li>
+                       @* <li>@Html.ActionLink("Cidades", "Index", "Cidade", new { area = "" }, null)</li>*@
                         <li>@Html.ActionLink("Empresas", "Index", "Empresa", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("Clientes", "Index", "Cliente", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("Funcionarios", "Index", "Funcionario", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("Servicos", "Index", "Servico", new { area = "" }, null)</li>
                         <li>@Html.ActionLink("Agenda", "Index", "Agenda", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("Horarios Agendados", "Index", "Calendario", new { area = "" }, null)</li>
                     </ul>
                     <ul class="nav navbar-nav navbar-right" data-bind="with: user">
                         <li>
