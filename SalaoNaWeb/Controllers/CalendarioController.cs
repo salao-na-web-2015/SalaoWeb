@@ -30,17 +30,22 @@ namespace SalaoNaWeb.Controllers
             //var agendasemanal = new WeekAgendaView();
             //scheduler.Views.Add(agendasemanal);
 
-            var mapa = new MapView();
-            scheduler.Views.Add(mapa);
+            //var mapa = new MapView();
+            //scheduler.Views.Add(mapa);
 
             
             scheduler.Config.first_hour = 6;
             scheduler.Config.last_hour = 20;
-
+            scheduler.Lightbox.Add(new LightboxText("textEmpresa", "Informe o salão:"));
+            scheduler.Lightbox.Add(new LightboxText("textServico", "Informe o tipo de serviço:"));
+            scheduler.Lightbox.Add(new LightboxTime("textTempo", "Informe o horário desejado:"));
+            
             scheduler.EnableDynamicLoading(SchedulerDataLoader.DynamicalLoadingMode.Week);
             scheduler.LoadData = true;
             scheduler.EnableDataprocessor = false;
             scheduler.Localization.Set(SchedulerLocalization.Localizations.Portuguese);
+
+            
             return View(scheduler);
         }
 
