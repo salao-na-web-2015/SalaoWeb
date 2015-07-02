@@ -79,3 +79,10 @@ body {
     height:600px;
     border:1px solid #aeaeae;
 }
+
+.form-horizontal{
+    margin-top: 5%;
+}
+.body-content{
+    margin-top: 2%;
+}
