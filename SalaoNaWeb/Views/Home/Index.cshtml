@@ -24,14 +24,12 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <p class="navbar-brand" data-bind="if: !loggedIn()">SalaoWeb</p>
-                    <p class="navbar-brand" data-bind="if: loggedIn()">SalaoWeb</p>
+                    @*<p class="navbar-brand" data-bind="if: !loggedIn()">SalaoWeb</p>*@
+                    <p class="navbar-brand" data-bind="if: loggedIn()">Home</p>
                 </div>
-                @*<div  data-bind="if: !loggedIn()" class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav navbar-left">
-                        <li>@Html.ActionLink("Registrar", "_Register", "Home", new { area = "" }, null)</li>
-                        <li>@Html.ActionLink("Acessar", "_Login", "Home", new { area = "" }, null)</li>
-                    </ul>*@
+                <div data-bind="if: !loggedIn()" class="nav navbar-nav navbar-left">
+                    <a href="http://localhost:54024/Home/index.html" class="btn btn-lg" type="button" style="color:#fff;">Pagina Inicial</a>
+                </div>
 
                 <div data-bind="if: loggedIn" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
